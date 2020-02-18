@@ -42,11 +42,20 @@ interface Props {
 const Counter = ({ title, initValue }: Props) => {
   const [ count, setCount ] = useState<number>(0);
   return (
-    <Coutainer>
+    <Container>
+      {title && (
+        <TitleContainer>
+          <TitleLabel>{title}</TitleLabel>
+        </TitleContainer>
+      )}
       <CountContainer>
-
+        <CountLabel>{initValue + count}</CountLabel>
       </CountContainer>
-    </Coutainer>
+      <ButtonContainer>
+        <Button iconName="plus" onPress={() => setCount(count + 1)} />
+        <Button iconName="minus" onPress={() => setCount(count - 1)} />
+      </ButtonContainer>
+    </Container>
   )
 };
 

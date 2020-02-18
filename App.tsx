@@ -1,49 +1,17 @@
 import React from 'react';
-import { StatusBar, SafeAreaView } from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 import Styled from 'styled-components/native';
+import Counter from './src/Screens/Counter';
 
-const ScrollView = Styled.ScrollView`
-  background-color: ${Colors.lighter};
+const Container = Styled.View`
+  flex: 1;
+  background-color: #EEE;
 `;
 
-const Body = Styled.View`
-  background-color: ${Colors.white};
-`;
-
-const sectionContainer = Styled.View`
-  margin-top: 32px;
-  padding-horizontal: 24px;
-`;
-
-const sectionDescription = Styled.Text`
-  margin-top: 8px;
-  font-size: 18px;
-  font-weight: 400;
-  color: ${Colors.dark};
-`;
-
-const HighLight = Styled.Text`
-  font-weight: 700;
-`;
-
-interface Props {}
-
-const App = ({ }, Props) => {
+const App = () => {
   return (
-    <Fragment>
-      <StatusBar>
-        
-      </StatusBar>
-    </Fragment>
+    <Container>
+      <Counter title="This is a Counter App" initValue={5} />
+    </Container>
   );
 };
 
